@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <label for="HSHD_NUM">HSHD_NUM: </label>
+    <input type="text" id="HSHD_NUM" name="HSHD_NUM">
+
+    <label for="sort">Sort By:</label>
+    <select name="sort" id="sort">
+        <option value="BASKET_NUM">BASKET_NUM</option>
+        <option value="DATE">DATE</option>
+        <option value="PRODUCT_NUM">PRODUCT_NUM</option>
+        <option value="DEPARTMENT">DEPARTMENT</option>
+        <option value="COMMODITY">COMMODITY</option>
+    </select>
+
+    <input type="text" id="sortValue" name="sortValue">
+    <button id="searchSql">Search</button>
+</body>
+</html>
+
+<script src="../static/search.js"></script>

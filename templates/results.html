@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <button id="newSearch">New Search</button>
+
+    <table>
+        <tr>
+            <th>HSHD_NUM</th>
+            <th>BASKET_NUM</th>
+            <th>DATE</th>
+            <th>PRODUCT_NUM</th>
+            <th>DEPARTMENT</th>
+            <th>COMMODITY</th>
+            <th>SPEND</th>
+            <th>UNITS</th>
+            <th>STORE_REGION</th>
+            <th>WEEK_NUM</th>
+            <th>YEAR</th>
+            <th>LOYALTY_FLAG</th>
+            <th>AGE_RANGE</th>
+            <th>MARITAL_STATUS</th>
+            <th>INCOME_RANGE</th>
+            <th>HOMEOWNER_DESC</th>
+            <th>HSHD_COMPOSITION</th>
+            <th>HSHD_SIZE</th>
+            <th>CHILDREN</th>
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            {% for value in row %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'results.js') }}" ></script>
