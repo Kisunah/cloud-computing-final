@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/search.css">
     <title>Search</title>
 </head>
 <body>
-    <label for="HSHD_NUM">HSHD_NUM: </label>
-    <input type="text" id="HSHD_NUM" name="HSHD_NUM">
+    <h1>Search</h1>
+    <div class="buttonContainer">
+        <div id="home" class="button">Home</div>
+    </div>
 
-    <label for="sort">Sort By:</label>
-    <select name="sort" id="sort">
-        <option value="BASKET_NUM">BASKET_NUM</option>
-        <option value="DATE">DATE</option>
-        <option value="PRODUCT_NUM">PRODUCT_NUM</option>
-        <option value="DEPARTMENT">DEPARTMENT</option>
-        <option value="COMMODITY">COMMODITY</option>
-    </select>
-
-    <input type="text" id="sortValue" name="sortValue">
-    <button id="searchSql">Search</button>
+    <div class="inputContainer">
+        <div class="input">
+            <p>HSHD_NUM: </p>
+            <input type="text" id="HSHD_NUM" name="HSHD_NUM" placeholder="Household #" class="inputValue">
+        </div>
+        <div class="input">
+            <p>Sort By:</p>
+            <select name="sort" id="sort" style="padding: 5px;">
+                <option selected value="">--Select an Option--</option>
+                <option value="BASKET_NUM">BASKET_NUM</option>
+                <option value="DATE">DATE</option>
+                <option value="PRODUCT_NUM">PRODUCT_NUM</option>
+                <option value="DEPARTMENT">DEPARTMENT</option>
+                <option value="COMMODITY">COMMODITY</option>
+            </select>
+        </div>
+        <div class="input">
+            <p id="sortName">Value:</p>
+            <input type="text" id="sortValue" name="sortValue" placeholder="Search Value" class="inputValue">
+        </div>
+    </div>
+    
+    <div class="buttonContainer">
+        <div id="searchButton" class="button">Search</div>
+    </div>
 </body>
 </html>
 

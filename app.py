@@ -6,10 +6,13 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     url_for('static', filename='index.js')
+    url_for('static', filename='index.css')
     return render_template('index.html')
 
 @app.route("/sample")
 def sample():
+    url_for('static', filename='sample.js')
+    url_for('static', filename='sample.css')
     householdData = SQL.query('SELECT * FROM households WHERE HSHD_NUM = 10')
     for i in range(len(householdData)):
         for j in range(len(householdData[i])):
@@ -57,14 +60,13 @@ def sample():
 @app.route("/search")
 def search():
     url_for('static', filename='search.js')
+    url_for('static', filename='search.css')
     return render_template('search.html')
 
 @app.route("/results/<int:HSHD_NUM>/<SORT>/<SORT_VALUE>")
 def searchResults(HSHD_NUM, SORT, SORT_VALUE):
     url_for('static', filename='results.js')
-    print(HSHD_NUM)
-    print(SORT)
-    print(SORT_VALUE)
+    url_for('static', filename='results.css')
     householdData = SQL.query('SELECT * FROM households WHERE HSHD_NUM = ' + str(HSHD_NUM))
     for i in range(len(householdData)):
         for j in range(len(householdData[i])):

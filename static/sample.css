@@ -1,0 +1,59 @@
+body {
+    background-color: #CCCCCC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 250%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #E00122;
+    color: black;
+    cursor: pointer;
+    width: 50px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+    line-height: 1.5em;
+    padding: 10px;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
