@@ -78,7 +78,7 @@ def searchResults(HSHD_NUM, SORT, SORT_VALUE):
         transactionData = SQL.query('SELECT * FROM transactions WHERE HSHD_NUM = ' + str(HSHD_NUM) + ' AND ' + str(SORT) + ' = ' + str(SORT_VALUE))
     elif SORT == 'DATE':
         # This needs to be tested and maybe fixed, just depends on the date format that needs to be queried
-        transactionData = SQL.query('SELECT * FROM transactions WHERE HSHD_NUM = ' + str(HSHD_NUM) + ' AND PURCHASE_DATE = ' + str(SORT_VALUE))
+        transactionData = SQL.query('SELECT * FROM transactions WHERE HSHD_NUM = ' + str(HSHD_NUM) + ' AND PURCHASE_DATE = \'' + str(SORT_VALUE) + '\'')
     else:
         transactionData = SQL.query('SELECT * FROM transactions WHERE HSHD_NUM = ' + str(HSHD_NUM))
 

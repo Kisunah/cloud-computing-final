@@ -14,6 +14,7 @@ homeButton.addEventListener('click', () => {
 hshdInput = document.getElementById('HSHD_NUM');
 selectBox = document.getElementById('sort');
 valueInput = document.getElementById('sortValue');
+dateFormat = document.getElementById('dateFormat');
 
 hshdInput.addEventListener('input', (event) => {
     console.log(event.target.value);
@@ -38,6 +39,8 @@ selectBox.addEventListener('change', (event) => {
         sortName.innerText = 'Value';
     } else {
         sortName.innerText = `${event.target.value}:`;
+        if (event.target.value === 'DATE') dateFormat.innerText = 'Date Format is YYYY-MM-DD';
+        else dateFormat.innerText = '\n';
     }
 
 
