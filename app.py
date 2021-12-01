@@ -14,47 +14,36 @@ def sample():
     url_for('static', filename='sample.js')
     url_for('static', filename='sample.css')
 
-    # This sample query needs to be reworked like the user search queries below
-    householdData = SQL.query('SELECT * FROM households WHERE HSHD_NUM = 10')
-    for i in range(len(householdData)):
-        for j in range(len(householdData[i])):
-            if isinstance(householdData[i][j], str):
-                householdData[i][j] = householdData[i][j].strip()
-
-    transactionData = SQL.query('SELECT * FROM transactions WHERE HSHD_NUM = 10')
-    for i in range(len(transactionData)):
-        for j in range(len(transactionData[i])):
-            if isinstance(transactionData[i][j], str):
-                transactionData[i][j] = transactionData[i][j].strip()
+    data = SQL.query('SELECT TOP(10) * FROM households INNER JOIN transactions ON households.HSHD_NUM = transactions.HSHD_NUM INNER JOIN products ON transactions.PRODUCT_NUM = products.PRODUCT_NUM WHERE households.HSHD_NUM = 10')
+    for m in range(len(data)):
+            for n in range(len(data[m])):
+                if isinstance(data[m][n], str):
+                    data[m][n] = data[m][n].strip()
 
     finalData = []
     for i in range(10):
         finalRow = []
-        finalRow.append(householdData[0][0])
-        finalRow.append(transactionData[i][0])
-        finalRow.append(transactionData[i][2])
-        finalRow.append(transactionData[i][3])
-        productData = SQL.query('SELECT * FROM products WHERE PRODUCT_NUM = ' + str(transactionData[i][3]))
-        for m in range(len(productData)):
-            for n in range(len(productData[m])):
-                if isinstance(productData[m][n], str):
-                    productData[m][n] = productData[m][n].strip()
 
-        finalRow.append(productData[0][1])
-        finalRow.append(productData[0][2])
-        finalRow.append(transactionData[i][4])
-        finalRow.append(transactionData[i][5])
-        finalRow.append(transactionData[i][6])
-        finalRow.append(transactionData[i][7])
-        finalRow.append(transactionData[i][8])
-        finalRow.append(householdData[0][1])
-        finalRow.append(householdData[0][2])
-        finalRow.append(householdData[0][3])
-        finalRow.append(householdData[0][4])
-        finalRow.append(householdData[0][5])
-        finalRow.append(householdData[0][6])
-        finalRow.append(householdData[0][7])
-        finalRow.append(householdData[0][8])
+        finalRow.append(data[i][0])
+        finalRow.append(data[i][9])
+        finalRow.append(data[i][11])
+        finalRow.append(data[i][12])
+        finalRow.append(data[i][19])
+        finalRow.append(data[i][20])
+        finalRow.append(data[i][13])
+        finalRow.append(data[i][14])
+        finalRow.append(data[i][15])
+        finalRow.append(data[i][16])
+        finalRow.append(data[i][17])
+        finalRow.append(data[i][1])
+        finalRow.append(data[i][2])
+        finalRow.append(data[i][3])
+        finalRow.append(data[i][4])
+        finalRow.append(data[i][5])
+        finalRow.append(data[i][6])
+        finalRow.append(data[i][7])
+        finalRow.append(data[i][8])
+
         finalData.append(finalRow)
 
     return render_template('sample.html', data=finalData)
