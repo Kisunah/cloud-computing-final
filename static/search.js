@@ -8,7 +8,7 @@ searchButton.addEventListener('click', () => {
 
 homeButton = document.getElementById('home');
 homeButton.addEventListener('click', () => {
-    window.location.href = '/';
+    window.location.href = '/homepage';
 });
 
 let hshdInput = document.getElementById('HSHD_NUM');

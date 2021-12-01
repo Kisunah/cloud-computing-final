@@ -5,5 +5,5 @@ newSearch.addEventListener('click', () => {
 
 let homeButton = document.getElementById('home');
 homeButton.addEventListener('click', () => {
-    window.location.href = '/';
+    window.location.href = '/homepage';
 })
