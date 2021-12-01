@@ -1,4 +1,4 @@
-searchButton = document.getElementById('searchButton');
+let searchButton = document.getElementById('searchButton');
 searchButton.addEventListener('click', () => {
     hshd = document.getElementById('HSHD_NUM').value;
     sort = document.getElementById('sort').value;
@@ -11,10 +11,10 @@ homeButton.addEventListener('click', () => {
     window.location.href = '/';
 });
 
-hshdInput = document.getElementById('HSHD_NUM');
-selectBox = document.getElementById('sort');
-valueInput = document.getElementById('sortValue');
-dateFormat = document.getElementById('dateFormat');
+let hshdInput = document.getElementById('HSHD_NUM');
+let selectBox = document.getElementById('sort');
+let valueInput = document.getElementById('sortValue');
+let dateFormat = document.getElementById('dateFormat');
 
 hshdInput.addEventListener('input', (event) => {
     console.log(event.target.value);

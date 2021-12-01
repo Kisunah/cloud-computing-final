@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signIn.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Sign In</h1>
+
+    <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
+    <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/signIn" method="post"> -->
+    <form class="inputContainer" action="http://localhost:5000/signIn" method="post">
+        <div class="input">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <input id="signInButton" type="submit" value="Sign In" class="button">
+        </div>
+    </form>
+
+    <div class="errorContainer">
+        <p id="infoError" class="error">{{errorMessage}}</p>
+    </div>
+</body>
+</html>
+
+<script src="../static/signIn.js"></script>

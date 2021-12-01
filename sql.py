@@ -12,7 +12,13 @@ def query(query):
             cursor.execute(query)
             row = cursor.fetchone()
             while row:
-                # print (str(row[0]) + " " + str(row[1]) + " " + str(row[2]))
                 rows.append(row)
                 row = cursor.fetchone()
     return rows
+
+def insert(query):
+    with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query)
+            conn.commit()
+            return

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/homepage.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+
+    <div class="buttonContainer">
+        <div id="sample" class="button">Sample</div>
+        <div id="search" class="button">Search</div>
+    </div>
+
+    <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
+    <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/logout" method="post"> -->
+    <form class="inputContainer" action="http://localhost:5000/logout" method="post">
+        <div class="input">
+            <input id="logoutButton" type="submit" value="Log Out" class="button">
+        </div>
+    </form>
+</body>
+</html>
+
+<script src="../static/homepage.js"></script>
