@@ -17,7 +17,7 @@ h1 {
     background-color: #E00122;
     color: black;
     cursor: pointer;
-    width: 100px;
+    width: 50px;
     padding: 20px;
     margin: 20px;
     border-radius: 20px;
@@ -25,8 +25,6 @@ h1 {
     font-weight: bold;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .button:hover {
@@ -35,17 +33,38 @@ h1 {
     border: 2px solid white;
 }
 
-.inputContainer {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    margin: 0px auto;
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
 }
 
-.input {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0px;
+td, th {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+    line-height: 1.5em;
+    padding: 10px;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.infoContainer {
+    width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 5px;
 }

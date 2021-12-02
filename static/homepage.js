@@ -8,7 +8,12 @@ search.addEventListener('click', () => {
     window.location.href = '/search'
 });
 
-let logout = document.getElementById('logout');
-logout.addEventListener('click', () => {
+let question1 = document.getElementById('question1');
+question1.addEventListener('click', () => {
+    window.location.href = 'question1';
+});
 
+let question2 = document.getElementById('question2');
+question2.addEventListener('click', () => {
+    window.location.href = 'question2';
 });
