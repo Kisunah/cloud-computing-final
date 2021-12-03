@@ -221,7 +221,55 @@ def question1():
 
 @app.route('/question2')
 def question2():
-    url_for('static', filename='question2.js')
-    url_for('static', filename='question2.css')
+    signedIn = request.cookies.get('signedIn')
+    if signedIn == 'True':
+        url_for('static', filename='question2.js')
+        url_for('static', filename='question2.css')
+        
+#       GRAPH 1
+        singleL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.MARITAL = Single')
+        singleL = str(singleL[0][0])
+        singleL = singleL.split('.')[0] + '.' + singleL.split('.')[0][:2]
+        
+        marriedL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.MARITAL = Married')
+        marriedL = str(marriedL[0][0])
+        marriedL = marriedL.split('.')[0] + '.' + marriedL.split('.')[0][:2]
+        
+        maritalComp = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE NOT household.MARITAL = null')
+        maritalComp = str(maritalComp[0][0])
+        maritalComp = maritalComp.split('.')[0] + '.' + maritalComp.split('.')[0][:2]
+        
+#       GRAPH 2
+        oneL =  SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = 1 Adult')
+        oneL = str(oneL[0][0])
+        oneL = oneL.split('.')[0] + '.' + oneL.split('.')[0][:2]
+        
+        twoL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = 2 Adults')
+        twoL = str(twoL[0][0])
+        twoL = twoL.split('.')[0] + '.' + twoL.split('.')[0][:2]
+        
+        maleL =  SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = Single Male')
+        maleL = str(maleL[0][0])
+        maleL = maleL.split('.')[0] + '.' + maleL.split('.')[0][:2]
+        
+        femaleL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = Single Female')
+        femaleL = str(femaleL[0][0])
+        femaleL = femaleL.split('.')[0] + '.' + femaleL.split('.')[0][:2]
+        
+        oneL = oneL + maleL + femaleL
 
-    return render_template('question2.html')
+        skidL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = 1 Adult and Kids')
+        skidL = str(skidL[0][0])
+        skidL = skidL.split('.')[0] + '.' + skidL.split('.')[0][:2]
+
+        mkidL = SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE household.HSHD_COMPOSITION = 2 Adults and Kids')
+        mkidL = str(mkidL[0][0])
+        mkidL = mkidL.split('.')[0] + '.' + mkidL.split('.')[0][:2]
+
+        householdComp =  SQL.query('SELECT COUNT(CASE WHEN household.L = 'Y' THEN 1 ELSE null END) FROM household WHERE NOT household.HSHD_COMPOSITION = null')
+        householdComp = str(householdComp[0][0])
+        householdComp = householdComp.split('.')[0] + '.' + householdComp.split('.')[0][:2]
+
+        return render_template('question2.html' singleL=singleL, marriedL=marriedL, maritalComp=maritalComp, oneL=oneL, twoL=twoL, skidL=skidL, mkidL=mkidL, householdComp=householdComp)
+   else:
+        return redirect('/')
