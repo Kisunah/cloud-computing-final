@@ -32,3 +32,41 @@ h1 {
     color: white;
     border: 2px solid white;
 }
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border: 3px solid black;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+    line-height: 1.5em;
+    padding: 10px;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.infoContainer {
+    width: 400px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

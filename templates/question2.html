@@ -13,6 +13,66 @@
     <div class="buttonContainer">
         <div id="home" class="button">Home</div>
     </div>
+    
+    <table>
+        <caption>Loyalty by Marital Status</caption>
+        <tr>
+            <th>Single</th>
+            <th>Married</th>
+            <th>Total</th>
+        </tr>
+
+        <tr>
+            <td>{{singleL}}</td>
+            <td>{{marriedL}}</td>
+            <td>{{maritalComp}}</td>
+        </tr>
+        
+        <tr>
+            <td>{{singleL/maritalComp}}%</td>
+            <td>{{marriedL/maritalComp}}%</td>
+            <td>{{maritalComp/maritalComp}}%</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Loyalty by Household Composition</caption>
+        <tr>
+            <th>One Adult</th>
+            <th>Two Adults</th>
+<!--            <th>Male</th>-->
+<!--            <th>Female</th>-->
+            <th>One Adult with Kids</th>
+            <th>Two Adults with Kids</th>
+            <th>Total</th>
+        </tr>/Users/kevinlee/Code/Cloud_Computing/templates/question2.html
+
+        <tr>
+            <td>{{oneL}}</td>
+            <td>{{twoL}}</td>
+<!--            <td>{{maleL}}</td>-->
+<!--            <td>{{femaleL}}</td>-->
+            <td>{{skidsL}}</td>
+            <td>{{mkidsL}}</td>
+            <td>{{householdComp}}</td>
+        </tr>
+        
+        <tr>
+            <td>{{oneL/householdComp}}%</td>
+            <td>{{twoL/householdComp}}%</td>
+<!--            <td>{{maleL/householdComp}}%</td>-->
+<!--            <td>{{femaleL/householdComp}}%</td>-->
+            <td>{{skidsL/householdComp}}%</td>
+            <td>{{mkidsL/householdComp}}%</td>
+            <td>{{householdComp/householdComp}}%</td>
+        </tr>
+    </table>
+
+    <div class="infoContainer">
+        <p>These tables showcase the loyalty of customers based on their marital status and household composition. The first set of values showing the number of individuals that are loyal, and then the second set showing the percentage over the total. As a result...</p>
+        <p> Within home composition, there was a category for single males and females, we’ve grouped that under the ‘One Adult’ category.</p>
+    </div>
+
 </body>
 </html>
 
