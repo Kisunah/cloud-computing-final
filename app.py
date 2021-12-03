@@ -202,22 +202,26 @@ def searchResults(HSHD_NUM, SORT, SORT_VALUE):
 
 @app.route('/question1')
 def question1():
-    url_for('static', filename='question1.js')
-    url_for('static', filename='question1.css')
+    signedIn = request.cookies.get('signedIn')
+    if signedIn == 'True':
+        url_for('static', filename='question1.js')
+        url_for('static', filename='question1.css')
 
-    sum2018 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2018')
-    sum2018 = str(sum2018[0][0])
-    sum2018 = sum2018.split('.')[0] + '.' + sum2018.split('.')[0][:2]
+        sum2018 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2018')
+        sum2018 = str(sum2018[0][0])
+        sum2018 = sum2018.split('.')[0] + '.' + sum2018.split('.')[0][:2]
 
-    sum2019 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2019')
-    sum2019 = str(sum2019[0][0])
-    sum2019 = sum2019.split('.')[0] + '.' + sum2019.split('.')[0][:2]
+        sum2019 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2019')
+        sum2019 = str(sum2019[0][0])
+        sum2019 = sum2019.split('.')[0] + '.' + sum2019.split('.')[0][:2]
 
-    sum2020 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2020')
-    sum2020 = str(sum2020[0][0])
-    sum2020 = sum2020.split('.')[0] + '.' + sum2020.split('.')[0][:2]
+        sum2020 = SQL.query('SELECT SUM(transactions.SPEND) FROM transactions WHERE transactions.YEAR = 2020')
+        sum2020 = str(sum2020[0][0])
+        sum2020 = sum2020.split('.')[0] + '.' + sum2020.split('.')[0][:2]
 
-    return render_template('question1.html', sum2018=sum2018, sum2019=sum2019, sum2020=sum2020)
+        return render_template('question1.html', sum2018=sum2018, sum2019=sum2019, sum2020=sum2020)
+    else:
+        return redirect('/')
 
 @app.route('/question2')
 def question2():
