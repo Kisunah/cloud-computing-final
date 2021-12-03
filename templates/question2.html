@@ -29,9 +29,9 @@
         </tr>
         
         <tr>
-            <td>{{singleL/maritalComp}}%</td>
-            <td>{{marriedL/maritalComp}}%</td>
-            <td>{{maritalComp/maritalComp}}%</td>
+            <td>{{(singleL/maritalComp)*100}}%</td>
+            <td>{{(marriedL/maritalComp*100)}}%</td>
+            <td>{{(maritalComp/maritalComp)*100}}%</td>
         </tr>
     </table>
 
@@ -40,31 +40,25 @@
         <tr>
             <th>One Adult</th>
             <th>Two Adults</th>
-<!--            <th>Male</th>-->
-<!--            <th>Female</th>-->
             <th>One Adult with Kids</th>
             <th>Two Adults with Kids</th>
             <th>Total</th>
-        </tr>/Users/kevinlee/Code/Cloud_Computing/templates/question2.html
+        </tr>
 
         <tr>
             <td>{{oneL}}</td>
             <td>{{twoL}}</td>
-<!--            <td>{{maleL}}</td>-->
-<!--            <td>{{femaleL}}</td>-->
             <td>{{skidsL}}</td>
             <td>{{mkidsL}}</td>
             <td>{{householdComp}}</td>
         </tr>
         
         <tr>
-            <td>{{oneL/householdComp}}%</td>
-            <td>{{twoL/householdComp}}%</td>
-<!--            <td>{{maleL/householdComp}}%</td>-->
-<!--            <td>{{femaleL/householdComp}}%</td>-->
-            <td>{{skidsL/householdComp}}%</td>
-            <td>{{mkidsL/householdComp}}%</td>
-            <td>{{householdComp/householdComp}}%</td>
+            <td>{{(oneL/householdComp)*100}}%</td>
+            <td>{{(twoL/householdComp)*100}}%</td>
+            <td>{{(skidsL/householdComp)*100}}%</td>
+            <td>{{(mkidsL/householdComp)*100}}%</td>
+            <td>{{(householdComp/householdComp)*100}}%</td>
         </tr>
     </table>
 
