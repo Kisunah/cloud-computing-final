@@ -30,6 +30,6 @@
         "venv.bak{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/1940dd0e-a5d8-40ab-a7df-0c49bf51771b/resourceGroups/CloudComputing/providers/Microsoft.Web/sites/cloudComputingGroup8Final",
+    "appService.defaultWebAppToDeploy": "/subscriptions/3b5419d4-1366-4d79-b917-efe5f91df403/resourceGroups/CloudComputing/providers/Microsoft.Web/sites/cloudComputingGroup8",
     "appService.deploySubpath": "."
 }

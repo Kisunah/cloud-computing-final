@@ -1,6 +1,6 @@
 import pyodbc
-server = 'group8-final-project.database.windows.net'
-database = 'group8FinalProjectDB'
+server = 'cloudcomputinggroup8.database.windows.net'
+database = 'cloudComputingGroup8DB'
 username = 'hanusisw'
 password = 'Group8!!'   
 driver= '{ODBC Driver 17 for SQL Server}'
