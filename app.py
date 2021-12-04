@@ -282,7 +282,7 @@ def upload():
         week_num = request.form['week_num']
         year = request.form['year']
 
-        SQL.insert('INSERT INTO transactions (basket_num, hshd_num, email, purchase_, product_num, spend, week_num, store_r, year) VALUES (\'' + basket_num + '\', \'' + hshd_num + '\', \'' + purchase_ + '\',\'' + product_num + '\', \'' + spend + '\', \'' + units + '\',\'' + store_r + '\', \'' + week_num + '\', \'' + year + '\')')
+        SQL.insert('INSERT INTO transactions (BASKET_NUM, HSHD_NUM, EMAIL, PURCHASE_, PRODUCT_NUM, SPEND, WEEK_NUM, STORE_R, YEAR) VALUES (\'' + basket_num + '\', \'' + hshd_num + '\', \'' + purchase_ + '\',\'' + product_num + '\', \'' + spend + '\', \'' + units + '\',\'' + store_r + '\', \'' + week_num + '\', \'' + year + '\')')
         resp = make_response(redirect('/homepage'))
         resp.set_cookie('signedIn', 'true')
         return resp
