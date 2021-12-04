@@ -1,0 +1,58 @@
+body {
+    background-color: #CCCCCC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 250%;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0px auto;
+}
+
+.input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+p {
+    margin: 0px;
+    font-weight: bold;
+}
+
+.inputValue {
+    padding: 5px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #E00122;
+    color: black;
+    cursor: pointer;
+    width: 65px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+#uploadButton {
+    background-color: grey;
+    pointer-events: none;
+    margin: 0px auto;
+}
