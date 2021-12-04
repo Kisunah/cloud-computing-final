@@ -290,3 +290,22 @@ def upload():
         url_for('static', filename='upload.js')
         url_for('static', filename='upload.css')
         return render_template('upload.html')
+
+
+@app.route("/uploadProducts", methods=['POST', 'GET'])
+def upload():
+    if request.method == 'POST':
+        product_num = request.form['product_num']
+        department = request.form['department']
+        commodity = request.form['commodity']
+        brand_ty = request.form['brand_ty']
+        natural_organic_flag = request.form['natural_organic_flag']
+
+        SQL.insert('INSERT INTO transactions (product_num, department, commodity, brand_ty, natural_organic_flag) VALUES (\'' + product_num + '\', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
+        resp = make_response(redirect('/homepage'))
+        resp.set_cookie('signedIn', 'true')
+        return resp
+    else:
+        url_for('static', filename='uploadProducts.js')
+        url_for('static', filename='uploadProducts.css')
+        return render_template('uploadProducts.html')
