@@ -309,3 +309,25 @@ def uploadProducts():
         url_for('static', filename='uploadProducts.js')
         url_for('static', filename='uploadProducts.css')
         return render_template('uploadProducts.html')
+
+@app.route("/uploadHouseholds", methods=['POST', 'GET'])
+def upload():
+    if request.method == 'POST':
+        hshd_num = request.form['hshd_num']
+        l = request.form['l']
+        age_range = request.form['age_range']
+        marital = request.form['marital']
+        income_range = request.form['income_range']
+        homeowner = request.form['homeowner']
+        hshd_composition = request.form['hshd_composition']
+        hh_size = request.form['hh_size']
+        children = request.form['children']
+
+        SQL.insert('INSERT INTO transactions (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (\'' + hshd_num + '\', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
+        resp = make_response(redirect('/homepage'))
+        resp.set_cookie('signedIn', 'true')
+        return resp
+    else:
+        url_for('static', filename='uploadHouseholds.js')
+        url_for('static', filename='uploadHouseholds.css')
+        return render_template('uploadHouseholds.html')
