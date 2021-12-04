@@ -293,7 +293,7 @@ def upload():
 
 
 @app.route("/uploadProducts", methods=['POST', 'GET'])
-def upload():
+def uploadProducts():
     if request.method == 'POST':
         product_num = request.form['product_num']
         department = request.form['department']
@@ -301,7 +301,7 @@ def upload():
         brand_ty = request.form['brand_ty']
         natural_organic_flag = request.form['natural_organic_flag']
 
-        SQL.insert('INSERT INTO transactions (PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG) VALUES (\'' + product_num + '\', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
+        SQL.insert('INSERT INTO products (PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG) VALUES (\'' + product_num + '\', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
         resp = make_response(redirect('/homepage'))
         resp.set_cookie('signedIn', 'true')
         return resp

@@ -10,25 +10,25 @@ search.addEventListener('click', () => {
 
 let question1 = document.getElementById('question1');
 question1.addEventListener('click', () => {
-    window.location.href = 'question1';
+    window.location.href = '/question1';
 });
 
 let question2 = document.getElementById('question2');
 question2.addEventListener('click', () => {
-    window.location.href = 'question2';
+    window.location.href = '/question2';
 });
 
 let upload = document.getElementById('upload');
-question2.addEventListener('click', () => {
-    window.location.href = 'upload';
+upload.addEventListener('click', () => {
+    window.location.href = '/upload';
 });
 
 let uploadProducts = document.getElementById('uploadProducts');
-question2.addEventListener('click', () => {
-    window.location.href = 'uploadProducts';
+uploadProducts.addEventListener('click', () => {
+    window.location.href = '/uploadProducts';
 });
 
 let uploadHouseholds = document.getElementById('uploadHouseholds');
-question2.addEventListener('click', () => {
-    window.location.href = 'uploadHouseholds';
+uploadHouseholds.addEventListener('click', () => {
+    window.location.href = '/uploadHouseholds';
 });
