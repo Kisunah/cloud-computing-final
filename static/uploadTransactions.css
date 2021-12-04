@@ -51,8 +51,20 @@ p {
     justify-content: center;
 }
 
+.button:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
 #uploadButton {
     background-color: grey;
     pointer-events: none;
     margin: 0px auto;
+}
+
+.infoContainer {
+    color: green;
+    font-weight: bold;
+    text-align: center;
 }

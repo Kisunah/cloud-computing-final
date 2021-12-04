@@ -1,6 +1,11 @@
+let homeButton = document.getElementById('home');
+homeButton.addEventListener('click', () => {
+    window.location.href = '/homepage';
+});
+
 let basket_num = document.getElementById('basket_num');
 let hshd_num = document.getElementById('hshd_num');
-let purchase_ = document.getElementById('purchase_');
+let purchase_date = document.getElementById('purchase_date');
 let product_num = document.getElementById('product_num');
 let spend = document.getElementById('spend');
 let units = document.getElementById('units');
@@ -10,7 +15,7 @@ let year = document.getElementById('year');
 let uploadButton = document.getElementById('uploadButton');
 
 basket_num.addEventListener('input', (event) => {
-    if (event.target.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
+    if (event.target.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -22,7 +27,7 @@ basket_num.addEventListener('input', (event) => {
 });
 
 hshd_num.addEventListener('input', (event) => {
-    if (basket_num.value == '' || event.target.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
+    if (basket_num.value == '' || event.target.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -33,7 +38,7 @@ hshd_num.addEventListener('input', (event) => {
     }
 })
 
-purchase_.addEventListener('input', (event) => {
+purchase_date.addEventListener('input', (event) => {
     if (basket_num.value == '' || hshd_num.value == '' || event.target.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
@@ -46,7 +51,7 @@ purchase_.addEventListener('input', (event) => {
 });
 
 product_num.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || event.target.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || event.target.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -58,7 +63,7 @@ product_num.addEventListener('input', (event) => {
 });
 
 spend.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || event.target.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || event.target.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -70,7 +75,7 @@ spend.addEventListener('input', (event) => {
 });
 
 units.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || event.target.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || event.target.value == '' || store_r.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -82,7 +87,7 @@ units.addEventListener('input', (event) => {
 });
 
 store_r.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || event.target.value == '' || week_num.value == '' || year.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || event.target.value == '' || week_num.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -94,7 +99,7 @@ store_r.addEventListener('input', (event) => {
 });
 
 week_num.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || event.target.value == '' || year.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || event.target.value == '' || year.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';
@@ -106,7 +111,7 @@ week_num.addEventListener('input', (event) => {
 });
 
 year.addEventListener('input', (event) => {
-    if (basket_num.value == '' || hshd_num.value == '' || purchase_.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || event.target.value == '') {
+    if (basket_num.value == '' || hshd_num.value == '' || purchase_date.value == ''  || product_num.value == '' || spend.value == '' || units.value == '' || store_r.value == '' || week_num.value == '' || event.target.value == '') {
         uploadButton.style.pointerEvents = 'none';
         uploadButton.style.cursor = 'default';
         uploadButton.style.backgroundColor = 'grey';

@@ -11,7 +11,7 @@ h1 {
 .inputContainer {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 425px;
     margin: 0px auto;
 }
 
@@ -49,6 +49,12 @@ p {
     font-weight: bold;
     display: flex;
     justify-content: center;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
 }
 
 #uploadButton {

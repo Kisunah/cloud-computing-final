@@ -1,3 +1,8 @@
+let homeButton = document.getElementById('home');
+homeButton.addEventListener('click', () => {
+    window.location.href = '/homepage';
+});
+
 let product_num = document.getElementById('product_num');
 let department = document.getElementById('department');
 let commodity = document.getElementById('commodity');

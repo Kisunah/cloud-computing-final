@@ -10,49 +10,57 @@
 <body>
     <h1>Upload Transactions</h1>
 
+    <div class="buttonContainer">
+        <div id="home" class="button">Home</div>
+    </div>
+
     <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
     <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/uploadTransactions" method="post"> -->
     <form class="inputContainer" action="http://localhost:5000/uploadTransactions" method="post">
         <div class="input">
-            <label for="basket_num">BASKET_NUM:</label><br>
-            <input type="text" id="basket_num" name="basket_num" class="inputValue"><br>
+            <p>BASKET_NUM:</p>
+            <input type="text" id="basket_num" name="basket_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="hshd_num">HSHD_NUM:</label><br>
-            <input type="text" id="hshd_num" name="hshd_num" class="inputValue"><br>
+            <p>HSHD_NUM:</p>
+            <input type="text" id="hshd_num" name="hshd_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="purchase_">PURCHASE_DATE:</label><br>
-            <input type="text" id="purchase_" name="purchase_" class="inputValue"><br>
+            <p>PURCHASE_DATE:</p>
+            <input type="text" id="purchase_date" name="purchase_date" class="inputValue">
         </div>
         <div class="input">
-            <label for="product_num">PRODUCT_NUM:</label><br>
-            <input type="text" id="product_num" name="product_num" class="inputValue"><br>
+            <p>PRODUCT_NUM:</p>
+            <input type="text" id="product_num" name="product_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="spend">SPEND:</label><br>
-            <input type="text" id="spend" name="spend" class="inputValue"><br>
+            <p>SPEND:</p>
+            <input type="text" id="spend" name="spend" class="inputValue">
         </div>
         <div class="input">
-            <label for="units">UNITS:</label><br>
-            <input type="text" id="units" name="units" class="inputValue"><br>
+            <p>UNITS:</p>
+            <input type="text" id="units" name="units" class="inputValue">
         </div>
         <div class="input">
-            <label for="store_r">STORE_R:</label><br>
-            <input type="text" id="store_r" name="store_r" class="inputValue"><br>
+            <p>STORE_R:</p>
+            <input type="text" id="store_r" name="store_r" class="inputValue">
         </div>
         <div class="input">
-            <label for="week_num">WEEK_NUM:</label><br>
-            <input type="text" id="week_num" name="week_num" class="inputValue"><br>
+            <p>WEEK_NUM:</p>
+            <input type="text" id="week_num" name="week_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="year">YEAR:</label><br>
-            <input type="text" id="year" name="year" class="inputValue"><br>
+            <p>YEAR:</p>
+            <input type="text" id="year" name="year" class="inputValue">
         </div>        
         <div class="input">
             <input id="uploadButton" type="submit" value="Upload" class="button">
         </div>
     </form>
+
+    <div class="infoContainer">
+        <p>{{message}}</p>
+    </div>
 </body>
 </html>
 

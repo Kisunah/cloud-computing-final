@@ -10,28 +10,32 @@
 <body>
     <h1>Upload Products</h1>
 
+    <div class="buttonContainer">
+        <div id="home" class="button">Home</div>
+    </div>
+
     <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
     <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/uploadProducts" method="post"> -->
     <form class="inputContainer" action="http://localhost:5000/uploadProducts" method="post">
         <div class="input">
-            <label for="product_num">PRODUCT_NUM:</label><br>
-            <input type="text" id="product_num" name="product_num" class="inputValue"><br>
+            <p>PRODUCT_NUM:</p>
+            <input type="text" id="product_num" name="product_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="department">DEPARTMENT:</label><br>
-            <input type="text" id="department" name="department" class="inputValue"><br>
+            <p>DEPARTMENT:</p>
+            <input type="text" id="department" name="department" class="inputValue">
         </div>
         <div class="input">
-            <label for="commodity">COMMODITY:</label><br>
-            <input type="text" id="commodity" name="commodity" class="inputValue"><br>
+            <p>COMMODITY:</p>
+            <input type="text" id="commodity" name="commodity" class="inputValue">
         </div>
         <div class="input">
-            <label for="brand_ty">BRAND_TY:</label><br>
-            <input type="text" id="brand_ty" name="brand_ty" class="inputValue"><br>
+            <p>BRAND_TY:</p>
+            <input type="text" id="brand_ty" name="brand_ty" class="inputValue">
         </div>
         <div class="input">
-            <label for="natural_organic_flag">NATURAL_ORGANIC_FLAG:</label><br>
-            <input type="text" id="natural_organic_flag" name="natural_organic_flag" class="inputValue"><br>
+            <p>NATURAL_ORGANIC_FLAG:</p>
+            <input type="text" id="natural_organic_flag" name="natural_organic_flag" class="inputValue">
         </div>     
         <div class="input">
             <input id="uploadButton" type="submit" value="Upload" class="button">

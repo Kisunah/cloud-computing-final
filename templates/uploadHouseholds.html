@@ -10,49 +10,55 @@
 <body>
     <h1>Upload Households</h1>
 
+    <div class="buttonContainer">
+        <div id="home" class="button">Home</div>
+    </div>
+
     <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
     <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/uploadHouseholds" method="post"> -->
     <form class="inputContainer" action="http://localhost:5000/uploadHouseholds" method="post">
         <div class="input">
-            <label for="hshd_num">HSHD_NUM:</label><br>
-            <input type="text" id="hshd_num" name="hshd_num" class="inputValue"><br>
+            <p>HSHD_NUM:</p>
+            <input type="text" id="hshd_num" name="hshd_num" class="inputValue">
         </div>
         <div class="input">
-            <label for="l">L:</label><br>
-            <input type="text" id="l" name="l" class="inputValue"><br>
+            <p>L:</p>
+            <input type="text" id="l" name="l" class="inputValue">
         </div>
         <div class="input">
-            <label for="age_range">AGE_RANGE:</label><br>
-            <input type="text" id="age_range" name="age_range" class="inputValue"><br>
+            <p>AGE_RANGE:</p>
+            <input type="text" id="age_range" name="age_range" class="inputValue">
         </div>
         <div class="input">
-            <label for="marital">MARITAL:</label><br>
-            <input type="text" id="marital" name="marital" class="inputValue"><br>
+            <p>MARITAL:</p>
+            <input type="text" id="marital" name="marital" class="inputValue">
         </div>
         <div class="input">
-            <label for="income_range">INCOME_RANGE:</label><br>
-            <input type="text" id="income_range" name="income_range" class="inputValue"><br>
+            <p>INCOME_RANGE:</p>
+            <input type="text" id="income_range" name="income_range" class="inputValue">
         </div>    
         <div class="input">
-            <label for="homeowner">HOMEOWNER:</label><br>
-            <input type="text" id="homeowner" name="homeowner" class="inputValue"><br>
+            <p>HOMEOWNER:</p>
+            <input type="text" id="homeowner" name="homeowner" class="inputValue">
         </div>  
         <div class="input">
-            <label for="hshd_composition">HSHD_COMPOSITION:</label><br>
-            <input type="text" id="hshd_composition" name="hshd_composition" class="inputValue"><br>
+            <p>HSHD_COMPOSITION:</p>
+            <input type="text" id="hshd_composition" name="hshd_composition" class="inputValue">
         </div>  
         <div class="input">
-            <label for="hh_size">HH_SIZE:</label><br>
-            <input type="text" id="hh_size" name="hh_size" class="inputValue"><br>
+            <p>HH_SIZE:</p>
+            <input type="text" id="hh_size" name="hh_size" class="inputValue">
         </div> 
         <div class="input">
-            <label for="children">CHILDREN:</label><br>
-            <input type="text" id="children" name="children" class="inputValue"><br>
+            <p>CHILDREN:</p>
+            <input type="text" id="children" name="children" class="inputValue">
         </div>     
         <div class="input">
             <input id="uploadButton" type="submit" value="Upload" class="button">
         </div>
     </form>
+
+
 </body>
 </html>
 

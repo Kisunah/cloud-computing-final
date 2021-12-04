@@ -274,18 +274,17 @@ def uploadTransactions():
     if request.method == 'POST':
         basket_num = request.form['basket_num']
         hshd_num = request.form['hshd_num']
-        purchase_ = request.form['purchase_']
+        purchase_date = request.form['purchase_date']
         product_num = request.form['product_num']
         spend = request.form['spend']
         units = request.form['units']
         store_r = request.form['store_r']
+        store_r = store_r.upper()
         week_num = request.form['week_num']
         year = request.form['year']
 
-        SQL.insert('INSERT INTO transactions (BASKET_NUM, HSHD_NUM, EMAIL, PURCHASE_DATE, PRODUCT_NUM, SPEND, WEEK_NUM, STORE_R, YEAR) VALUES (\'' + basket_num + '\', \'' + hshd_num + '\', \'' + purchase_ + '\',\'' + product_num + '\', \'' + spend + '\', \'' + units + '\',\'' + store_r + '\', \'' + week_num + '\', \'' + year + '\')')
-        resp = make_response(redirect('/homepage'))
-        resp.set_cookie('signedIn', 'true')
-        return resp
+        SQL.insert('INSERT INTO transactions (BASKET_NUM, HSHD_NUM, PURCHASE_DATE, PRODUCT_NUM, SPEND, UNITS, STORE_R, WEEK_NUM, YEAR) VALUES (' + basket_num + ', ' + hshd_num + ', \'' + purchase_date + '\', ' + product_num + ', '+ spend + ', ' + units + ', \'' + store_r + '\', ' + week_num + ', ' + year + ')')
+        return render_template('uploadTransactions.html', message='Data Uploaded')
     else:
         url_for('static', filename='uploadTransactions.js')
         url_for('static', filename='uploadTransactions.css')
@@ -297,11 +296,15 @@ def uploadProducts():
     if request.method == 'POST':
         product_num = request.form['product_num']
         department = request.form['department']
+        department = department.upper()
         commodity = request.form['commodity']
+        commodity = commodity.upper()
         brand_ty = request.form['brand_ty']
+        brand_ty = brand_ty.upper()
         natural_organic_flag = request.form['natural_organic_flag']
+        natural_organic_flag = natural_organic_flag.upper()
 
-        SQL.insert('INSERT INTO products (PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG) VALUES (\'' + product_num + '\', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
+        SQL.insert('INSERT INTO products (PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG) VALUES (' + product_num + ', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
         resp = make_response(redirect('/homepage'))
         resp.set_cookie('signedIn', 'true')
         return resp
@@ -315,6 +318,7 @@ def uploadHouseholds():
     if request.method == 'POST':
         hshd_num = request.form['hshd_num']
         l = request.form['l']
+        l = l.upper()
         age_range = request.form['age_range']
         marital = request.form['marital']
         income_range = request.form['income_range']
@@ -323,7 +327,7 @@ def uploadHouseholds():
         hh_size = request.form['hh_size']
         children = request.form['children']
 
-        SQL.insert('INSERT INTO households (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (\'' + hshd_num + '\', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
+        SQL.insert('INSERT INTO households (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (' + hshd_num + ', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
         resp = make_response(redirect('/homepage'))
         resp.set_cookie('signedIn', 'true')
         return resp

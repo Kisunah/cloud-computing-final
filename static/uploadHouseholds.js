@@ -1,3 +1,8 @@
+let homeButton = document.getElementById('home');
+homeButton.addEventListener('click', () => {
+  window.location.href = '/homepage';
+});
+
 let hshd_num = document.getElementById('hshd_num');
 let l = document.getElementById('l');
 let age_range = document.getElementById('age_range');
