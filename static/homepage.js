@@ -18,17 +18,17 @@ question2.addEventListener('click', () => {
     window.location.href = 'question2';
 });
 
-let upload = document.getElementById('uploadTransactions');
-question2.addEventListener('click', () => {
+let uploadTransactions = document.getElementById('uploadTransactions');
+uploadTransactions.addEventListener('click', () => {
     window.location.href = 'uploadTransactions';
 });
 
 let uploadProducts = document.getElementById('uploadProducts');
-question2.addEventListener('click', () => {
+uploadProducts.addEventListener('click', () => {
     window.location.href = 'uploadProducts';
 });
 
 let uploadHouseholds = document.getElementById('uploadHouseholds');
-question2.addEventListener('click', () => {
+uploadHouseholds.addEventListener('click', () => {
     window.location.href = 'uploadHouseholds';
 });
