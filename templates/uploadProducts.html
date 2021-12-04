@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/uploadProducts.css">
+    <title>Upload Products</title>
+</head>
+<body>
+    <h1>Upload Products</h1>
+
+    <!-- This is line below is the one that needs to be deployed because the localhost url doesn't work on deployed site -->
+    <!-- <form class="inputContainer" action="https://cloudcomputinggroup8final.azurewebsites.net/register" method="post"> -->
+    <form class="inputContainer" action="http://localhost:5000/uploadProducts" method="post">
+        <div class="input">
+            <label for="product_num">PRODUCT_NUM:</label><br>
+            <input type="text" id="product_num" name="product_num" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <label for="department">DEPARTMENT:</label><br>
+            <input type="text" id="department" name="department" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <label for="commodity">COMMODITY:</label><br>
+            <input type="text" id="commodity" name="commodity" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <label for="brand_ty">BRAND_TY:</label><br>
+            <input type="text" id="brand_ty" name="brand_ty" class="inputValue"><br>
+        </div>
+        <div class="input">
+            <label for="natural_organic_flag">NATURAL_ORGANIC_FLAG:</label><br>
+            <input type="text" id="natural_organic_flag" name="natural_organic_flag" class="inputValue"><br>
+        </div>     
+        <div class="input">
+            <input id="uploadButton" type="submit" value="Upload" class="button">
+        </div>
+    </form>
+</body>
+</html>
+
+<script src="../static/uploadProducts.js"></script>
