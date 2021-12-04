@@ -22,3 +22,9 @@ let upload = document.getElementById('upload');
 question2.addEventListener('click', () => {
     window.location.href = 'upload';
 });
+
+let upload = document.getElementById('uploadProducts');
+question2.addEventListener('click', () => {
+    window.location.href = 'uploadProducts';
+});
+
