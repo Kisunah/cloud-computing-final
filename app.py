@@ -269,8 +269,8 @@ def question2():
         return redirect('/')
 
     
-@app.route("/upload", methods=['POST', 'GET'])
-def upload():
+@app.route("/uploadTransactions", methods=['POST', 'GET'])
+def uploadTransactions():
     if request.method == 'POST':
         basket_num = request.form['basket_num']
         hshd_num = request.form['hshd_num']
@@ -287,9 +287,9 @@ def upload():
         resp.set_cookie('signedIn', 'true')
         return resp
     else:
-        url_for('static', filename='upload.js')
-        url_for('static', filename='upload.css')
-        return render_template('upload.html')
+        url_for('static', filename='uploadTransactions.js')
+        url_for('static', filename='uploadTransactions.css')
+        return render_template('uploadTransactions.html')
 
 
 @app.route("/uploadProducts", methods=['POST', 'GET'])
@@ -311,7 +311,7 @@ def uploadProducts():
         return render_template('uploadProducts.html')
 
 @app.route("/uploadHouseholds", methods=['POST', 'GET'])
-def upload():
+def uploadHouseholds():
     if request.method == 'POST':
         hshd_num = request.form['hshd_num']
         l = request.form['l']
@@ -323,7 +323,7 @@ def upload():
         hh_size = request.form['hh_size']
         children = request.form['children']
 
-        SQL.insert('INSERT INTO transactions (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (\'' + hshd_num + '\', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
+        SQL.insert('INSERT INTO households (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (\'' + hshd_num + '\', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
         resp = make_response(redirect('/homepage'))
         resp.set_cookie('signedIn', 'true')
         return resp
