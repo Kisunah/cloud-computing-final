@@ -267,3 +267,26 @@ def question2():
         return render_template('question2.html', singleL=singleL, marriedL=marriedL, maritalComp=maritalComp, oneL=oneL, twoL=twoL, skidsL=skidL, mkidsL=mkidL, householdComp=householdComp)
     else:
         return redirect('/')
+
+    
+@app.route("/upload", methods=['POST', 'GET'])
+def upload():
+    if request.method == 'POST':
+        basket_num = request.form['basket_num']
+        hshd_num = request.form['hshd_num']
+        purchase_ = request.form['purchase_']
+        product_num = request.form['product_num']
+        spend = request.form['spend']
+        units = request.form['units']
+        store_r = request.form['store_r']
+        week_num = request.form['week_num']
+        year = request.form['year']
+
+        SQL.insert('INSERT INTO transactions (basket_num, hshd_num, email, purchase_, product_num, spend, week_num, store_r, year) VALUES (\'' + basket_num + '\', \'' + hshd_num + '\', \'' + purchase_ + '\',\'' + product_num + '\', \'' + spend + '\', \'' + units + '\',\'' + store_r + '\', \'' + week_num + '\', \'' + year + '\')')
+        resp = make_response(redirect('/homepage'))
+        resp.set_cookie('signedIn', 'true')
+        return resp
+    else:
+        url_for('static', filename='upload.js')
+        url_for('static', filename='upload.css')
+        return render_template('upload.html')
