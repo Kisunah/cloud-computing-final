@@ -305,9 +305,7 @@ def uploadProducts():
         natural_organic_flag = natural_organic_flag.upper()
 
         SQL.insert('INSERT INTO products (PRODUCT_NUM, DEPARTMENT, COMMODITY, BRAND_TY, NATURAL_ORGANIC_FLAG) VALUES (' + product_num + ', \'' + department + '\', \'' + commodity + '\',\'' + brand_ty + '\', \'' + natural_organic_flag + '\')')
-        resp = make_response(redirect('/homepage'))
-        resp.set_cookie('signedIn', 'true')
-        return resp
+        return render_template('uploadProducts.html', message='Data Uploaded')
     else:
         url_for('static', filename='uploadProducts.js')
         url_for('static', filename='uploadProducts.css')
@@ -328,9 +326,7 @@ def uploadHouseholds():
         children = request.form['children']
 
         SQL.insert('INSERT INTO households (HSHD_NUM, L, AGE_RANGE, MARITAL, INCOME_RANGE, HOMEOWNER, HSHD_COMPOSITION, HH_SIZE, CHILDREN) VALUES (' + hshd_num + ', \'' + l + '\', \'' + age_range + '\',\'' + marital + '\', \'' + income_range + '\', \'' + homeowner + '\', \'' + hshd_composition + '\',\'' + hh_size + '\', \'' + children + '\')')
-        resp = make_response(redirect('/homepage'))
-        resp.set_cookie('signedIn', 'true')
-        return resp
+        return render_template('uploadHouseholds.html', message='Data Uploaded')
     else:
         url_for('static', filename='uploadHouseholds.js')
         url_for('static', filename='uploadHouseholds.css')

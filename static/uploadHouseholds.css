@@ -62,3 +62,9 @@ p {
     pointer-events: none;
     margin: 0px auto;
 }
+
+.infoContainer {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
